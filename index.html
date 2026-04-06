@@ -1,19 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Marketing Campaign</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kitchen Equipment Campaign</title>
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/" + i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "YOUR_PROJECT_ID");
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f5f2;
+      color: #222;
+      text-align: center;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 30px 20px 40px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+      color: #2b2b2b;
+    }
+
+    .subtext {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .cta-button {
+      background: #b8860b;
+      color: white;
+      padding: 16px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+
+    #message {
+      margin-top: 18px;
+      font-weight: bold;
+      color: #1d6f42;
+    }
+  </style>
 </head>
 <body>
-  <h1>Exclusive Demo for VIP Customers</h1>
-  <video src="videoplayback.mp4" controls width="500"></video>
-  
-  <!-- THE PRODUCT BUTTON -->
-  <div style="margin: 20px 0;">
-    <button id="buy-now" style="background: #ff6b35; color: white; padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">
-      Get pRODUCT Now - Save 50%
-    </button>
+  <div class="hero">
+    <h1>Elevate Your Kitchen Experience</h1>
+    <p class="subtext">
+      Discover premium kitchen equipment designed for quality, elegance, and everyday performance.
+    </p>
+
+    <video controls>
+      <source src="videoplayback.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div>
+      <button id="cta-button" class="cta-button">Request a Quote</button>
+    </div>
+
+    <div id="message"></div>
   </div>
-  
-  <!-- Clarity + GA4 scripts here -->
+
+  <script>
+    const ctaButton = document.getElementById('cta-button');
+    const message = document.getElementById('message');
+
+    ctaButton.addEventListener('click', function() {
+      if (window.clarity) {
+        window.clarity('event', 'cta_click');
+        window.clarity('set', 'cta_button', 'Request a Quote');
+      }
+
+      message.textContent = 'CTA clicked successfully!';
+    });
+  </script>
 </body>
 </html>
